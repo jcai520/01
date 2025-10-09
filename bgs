@@ -1,60 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="600">
-  <rect width="100%" height="100%" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900">
+  <rect width="100%" height="100%" fill="#ffffff"/>
   <style>
-    text { font-family: "Microsoft YaHei", "Heiti SC", sans-serif; font-size:14px; fill:#000; }
-    .room { fill:none; stroke:#333; stroke-width:2; }
-    .label { font-size:16px; font-weight:bold; }
-    .arrow { stroke:#f00; stroke-width:2; marker-end:url(#arrowhead); }
+    text{font-family:"Microsoft YaHei","Heiti SC",sans-serif;fill:#111;font-size:15px}
+    .outline{fill:none;stroke:#333;stroke-width:2}
+    .thin{fill:none;stroke:#777;stroke-width:1.5;stroke-dasharray:6 6}
+    .arrow{stroke:#d33;stroke-width:2.5;marker-end:url(#ah)}
+    .label{font-weight:bold;font-size:18px}
+    .note{fill:#444}
+    .dot{fill:#f3c300;stroke:#b38b00;stroke-width:1}
+    .wchan{fill:#0a0;stroke:#070;stroke-width:1}
   </style>
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="red" />
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#d33"/>
     </marker>
   </defs>
 
-  <!-- 外框 -->
-  <rect x="50" y="100" width="950" height="400" class="room"/>
-  <text x="500" y="90" class="label">一层布局示意（10.5m × 9.5m）</text>
+  <!-- ===== 尺度换算：1m ≈ 80px；主体 10.5m x 9.5m => 840 x 760 px ===== -->
+  <!-- 一层外框（原点） -->
+  <g id="L1" transform="translate(120,90)">
+    <text x="420" y="-30" class="label">一层 · 风水能量示意（约 10.5m × 9.5m）</text>
+    <text x="-80" y="20">西</text><text x="850" y="20">东</text>
+    <text x="420" y="-10">北</text><text x="420" y="790">南</text>
+    <rect x="0" y="0" width="840" height="760" class="outline"/>
 
-  <!-- 门窗 -->
-  <rect x="50" y="270" width="10" height="60" fill="#999"/>
-  <text x="20" y="260">西门</text>
-  <rect x="990" y="250" width="10" height="100" fill="#99d"/>
-  <text x="960" y="240">东窗</text>
+    <!-- 西北角入门（门洞示意） -->
+    <rect x="-6" y="10" width="6" height="120" fill="#888"/>
+    <text x="-40" y="10">西北门</text>
 
-  <!-- 气流箭头 -->
-  <line x1="60" y1="300" x2="990" y2="300" class="arrow"/>
-  <text x="500" y="320" fill="red">气流：西 → 东（穿堂煞，建议设展示墙缓冲）</text>
+    <!-- 东侧主要采光（窗带示意，位置可按现场调整） -->
+    <rect x="840" y="280" width="6" height="200" fill="#99c"/>
+    <text x="790" y="270">东向窗带</text>
 
-  <!-- 展示墙缓冲 -->
-  <rect x="400" y="200" width="20" height="200" fill="#ccc"/>
-  <text x="380" y="180">半高展示墙1.2~1.5m</text>
+    <!-- 中柱（参考） -->
+    <rect x="418" y="360" width="24" height="40" fill="#111"/>
+    <text x="440" y="375">中柱</text>
+    <!-- 二层隔层线（到中柱，虚线投影） -->
+    <rect x="420" y="0" width="420" height="760" class="thin"/>
+    <text x="580" y="20" class="note">↑ 二层隔层范围（到中柱线）</text>
 
-  <!-- 区域分布 -->
-  <rect x="600" y="120" width="390" height="360" class="room"/>
-  <text x="700" y="140">裁床区（5m桌）</text>
+    <!-- 穿堂主气流：门→室内→窗 -->
+    <line x1="0" y1="70" x2="820" y2="330" class="arrow"/>
+    <text x="250" y="155" fill="#d33">主气流：西北门 → 室内 → 东窗（直冲，需缓气）</text>
 
-  <rect x="600" y="360" width="300" height="120" class="room"/>
-  <text x="700" y="480">布料展示区</text>
+    <!-- 缓气展示墙（半高 1.2~1.5m） -->
+    <rect x="360" y="230" width="20" height="300" fill="#cfcfcf"/>
+    <text x="300" y="220" class="note">半高展示墙（缓冲穿堂煞）</text>
+    <text x="300" y="240" class="note">建议高 1.2–1.5m，略偏门侧</text>
 
-  <rect x="50" y="120" width="200" height="150" class="room"/>
-  <text x="70" y="140">仓储发货区</text>
+    <!-- 风水点位 -->
+    <!-- 靠山：北墙整线 -->
+    <line x1="0" y1="0" x2="840" y2="0" stroke="#444" stroke-width="4"/>
+    <text x="20" y="-8" class="note">北墙为“靠山”，宜设高柜/书架（稳气守财）</text>
 
-  <rect x="270" y="120" width="100" height="100" class="room"/>
-  <text x="280" y="110">厕所</text>
+    <!-- 财位：西北角 + 北中段 -->
+    <circle cx="20" cy="20" r="8" class="dot"/><text x="35" y="26">财位①（西北）</text>
+    <circle cx="300" cy="20" r="8" class="dot"/><text x="315" y="26">财位②（北中）</text>
 
-  <rect x="270" y="240" width="100" height="150" class="room"/>
-  <text x="280" y="420">茶水区</text>
+    <!-- 文昌位：东南角（灵感） -->
+    <circle cx="820" cy="740" r="8" class="wchan"/><text x="640" y="735">文昌/创意位：东南角（宜绿植、灵感板）</text>
 
-  <rect x="270" y="420" width="100" height="80" class="room"/>
-  <text x="280" y="510">楼梯</text>
+    <!-- 忌：厕门直冲裁床（提示）— 厕所在东北角，标注在二层亦同理，这里只提示一层动静逻辑 -->
+    <text x="20" y="760" class="note">提示：厕门、楼梯口勿直冲主要工位/裁床；动静区需分明。</text>
+  </g>
 
-  <!-- 风水点 -->
-  <circle cx="80" cy="140" r="8" fill="gold"/>
-  <text x="100" y="145">财位（西北角）</text>
+  <!-- ===== 二层风水示意（放在下方） ===== -->
+  <g id="L2" transform="translate(120,520)">
+    <text x="420" y="-30" class="label">二层 · 风水能量示意（隔层到中柱）</text>
+    <!-- 二层占右半（到中柱），同样 420 x 760 的高度比例，这里缩高显示 -->
+    <rect x="420" y="-380" width="420" height="360" class="outline"/>
+    <text x="430" y="-395" class="note">二层范围（面向东侧，至中柱）</text>
 
-  <circle cx="950" cy="160" r="8" fill="green"/>
-  <text x="870" y="180">文昌位（东南）</text>
+    <!-- 楼梯上口（西侧中段偏南） -->
+    <rect x="430" y="-240" width="60" height="80" fill="#bbb"/>
+    <text x="430" y="-250">楼梯上口</text>
 
-  <text x="500" y="550" fill="#333">靠山：北墙 / 聚气区：展示墙内侧 / 忌：厕门直冲裁床</text>
+    <!-- 主办公室（你，西北侧靠山） -->
+    <rect x="500" y="-360" width="150" height="120" class="outline"/>
+    <text x="505" y="-370">主管室（你 · 武曲天梁）</text>
+    <text x="505" y="-345" class="note">背北墙为靠山，桌朝东南</text>
+
+    <!-- 设计师室（东南，文昌位） -->
+    <rect x="690" y="-220" width="130" height="120" class="outline"/>
+    <text x="695" y="-230">设计师室（紫微太阴）</text>
+    <text x="695" y="-205" class="note">靠东窗柔光，宜绿植/画作</text>
+
+    <!-- 灵感/会议区（中部靠东） -->
+    <rect x="600" y="-300" width="160" height="70" class="outline"/>
+    <text x="605" y="-310">灵感/会议区</text>
+    <text x="605" y="-290" class="note">公共桌 + Moodboard</text>
+
+    <!-- 二层风水点 -->
+    <circle cx="500" cy="-360" r="7" class="dot"/><text x="515" y="-365">财位（主管室角）</text>
+    <circle cx="820" cy="-120" r="7" class="wchan"/><text x="700" y="-125">文昌（设计师室）</text>
+  </g>
 </svg>
