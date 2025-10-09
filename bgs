@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="600">
+  <rect width="100%" height="100%" fill="white"/>
+  <style>
+    text { font-family: "Microsoft YaHei", "Heiti SC", sans-serif; font-size:14px; fill:#000; }
+    .room { fill:none; stroke:#333; stroke-width:2; }
+    .label { font-size:16px; font-weight:bold; }
+    .arrow { stroke:#f00; stroke-width:2; marker-end:url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="red" />
+    </marker>
+  </defs>
+
+  <!-- 外框 -->
+  <rect x="50" y="100" width="950" height="400" class="room"/>
+  <text x="500" y="90" class="label">一层布局示意（10.5m × 9.5m）</text>
+
+  <!-- 门窗 -->
+  <rect x="50" y="270" width="10" height="60" fill="#999"/>
+  <text x="20" y="260">西门</text>
+  <rect x="990" y="250" width="10" height="100" fill="#99d"/>
+  <text x="960" y="240">东窗</text>
+
+  <!-- 气流箭头 -->
+  <line x1="60" y1="300" x2="990" y2="300" class="arrow"/>
+  <text x="500" y="320" fill="red">气流：西 → 东（穿堂煞，建议设展示墙缓冲）</text>
+
+  <!-- 展示墙缓冲 -->
+  <rect x="400" y="200" width="20" height="200" fill="#ccc"/>
+  <text x="380" y="180">半高展示墙1.2~1.5m</text>
+
+  <!-- 区域分布 -->
+  <rect x="600" y="120" width="390" height="360" class="room"/>
+  <text x="700" y="140">裁床区（5m桌）</text>
+
+  <rect x="600" y="360" width="300" height="120" class="room"/>
+  <text x="700" y="480">布料展示区</text>
+
+  <rect x="50" y="120" width="200" height="150" class="room"/>
+  <text x="70" y="140">仓储发货区</text>
+
+  <rect x="270" y="120" width="100" height="100" class="room"/>
+  <text x="280" y="110">厕所</text>
+
+  <rect x="270" y="240" width="100" height="150" class="room"/>
+  <text x="280" y="420">茶水区</text>
+
+  <rect x="270" y="420" width="100" height="80" class="room"/>
+  <text x="280" y="510">楼梯</text>
+
+  <!-- 风水点 -->
+  <circle cx="80" cy="140" r="8" fill="gold"/>
+  <text x="100" y="145">财位（西北角）</text>
+
+  <circle cx="950" cy="160" r="8" fill="green"/>
+  <text x="870" y="180">文昌位（东南）</text>
+
+  <text x="500" y="550" fill="#333">靠山：北墙 / 聚气区：展示墙内侧 / 忌：厕门直冲裁床</text>
+</svg>
