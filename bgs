@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000">
-  <rect width="100%" height="100%" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900">
+  <rect width="100%" height="100%" fill="#fff"/>
   <style>
     text{font-family:"Microsoft YaHei","Heiti SC",sans-serif;fill:#111;font-size:15px}
     .outline{fill:none;stroke:#333;stroke-width:2}
     .thin{fill:none;stroke:#777;stroke-width:1.5;stroke-dasharray:6 6}
-    .label{font-weight:bold;font-size:18px}
-    .dim{fill:#555}
+    .label{font-weight:bold;font-size:20px}
     .zone{fill:none;stroke:#1a73e8;stroke-width:2}
     .solid{fill:#ddd;stroke:#aaa;stroke-width:1}
     .door{fill:#888}
     .win{fill:#9bd}
     .arrow{stroke:#d33;stroke-width:2.5;marker-end:url(#ah)}
+    .note{fill:#444}
   </style>
   <defs>
     <marker id="ah" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
@@ -18,94 +18,64 @@
     </marker>
   </defs>
 
-  <!-- 尺度：1m ≈ 80px；主体 10.5m x 9.5m => 840 x 760 px -->
-  <!-- 一层 -->
-  <g transform="translate(120,120)">
-    <text x="420" y="-40" class="label">一层 · 实用布局（约 10.5m × 9.5m）</text>
+  <!-- 比例：1m≈80px；总体 10.5m x 9.5m => 840 x 760 -->
+  <g transform="translate(120,90)">
+    <text x="420" y="-35" class="label">一层 · 风水与布局（约10.5m × 9.5m）</text>
     <rect x="0" y="0" width="840" height="760" class="outline"/>
-    <text x="0" y="780" class="dim">尺寸：长约10.5m（横向 840px），宽约9.5m（纵向 760px）</text>
-    <text x="-70" y="20">西</text><text x="850" y="20">东</text><text x="420" y="-15">北</text><text x="420" y="790">南</text>
+    <text x="-60" y="18">西</text><text x="852" y="18">东</text>
+    <text x="420" y="-12">北</text><text x="420" y="785">南</text>
 
-    <!-- 门（西北角） -->
-    <rect x="-6" y="10" width="6" height="120" class="door"/>
-    <text x="-40" y="10">西北门</text>
-
-    <!-- 东窗（示意） -->
-    <rect x="840" y="280" width="6" height="200" class="win"/>
-    <text x="790" y="270">东向窗带</text>
+    <!-- 门：西北角；窗：东侧中段 -->
+    <rect x="-6" y="10" width="6" height="120" class="door"/><text x="-40" y="10">西北门</text>
+    <rect x="840" y="280" width="6" height="200" class="win"/><text x="790" y="270">东向窗带</text>
 
     <!-- 中柱 -->
     <rect x="418" y="360" width="24" height="40" fill="#111"/>
     <text x="446" y="375">中柱</text>
 
-    <!-- 二层投影范围（虚线，至中柱） -->
+    <!-- 二层范围（只作参照：到中柱线，虚线显示） -->
     <rect x="420" y="0" width="420" height="760" class="thin"/>
-    <text x="560" y="20" fill="#666">↑ 二层隔层范围（到中柱）</text>
+    <text x="560" y="22" class="note">↑ 二层隔层范围至中柱（仅作参照）</text>
+
+    <!-- 穿堂主气流：门→室内→窗 -->
+    <line x1="0" y1="70" x2="820" y2="330" class="arrow"/>
+    <text x="230" y="145" fill="#d33">主气：西北门 → 东窗（需中段缓气）</text>
 
     <!-- 半高展示墙（缓冲穿堂气） -->
     <rect x="360" y="230" width="20" height="300" class="solid"/>
-    <text x="300" y="220">半高展示墙 1.2–1.5m</text>
+    <text x="300" y="220" class="note">半高展示墙 1.2–1.5m（略偏门侧）</text>
 
-    <!-- 功能区：裁床区（东侧） -->
+    <!-- 功能区 -->
+    <!-- 裁床区（东侧采光） -->
     <rect x="560" y="160" width="260" height="240" class="zone"/>
     <text x="570" y="150">裁床区（靠东采光）</text>
-    <!-- 5m 裁床 -->
-    <rect x="590" y="210" width="400" height="120" transform="translate(-140,0)" class="solid"/>
+    <!-- 裁床 5m×1.5m（示意） -->
+    <rect x="580" y="210" width="400" height="120" transform="translate(-140,0)" class="solid"/>
     <text x="585" y="205">裁床 5m × 1.5m</text>
 
-    <!-- 布料展示/样布区（裁床南） -->
+    <!-- 布料展示/样布（裁床南面） -->
     <rect x="560" y="420" width="260" height="140" class="zone"/>
     <text x="570" y="415">布料展示区</text>
 
-    <!-- 仓储 + 发货（西北—北侧） -->
+    <!-- 仓储 + 发货（西北—北侧，静区聚财） -->
     <rect x="40" y="80" width="280" height="220" class="zone"/>
     <text x="50" y="70">仓储 + 发货（静区）</text>
 
-    <!-- 楼梯（西侧中段偏南，直梯） -->
+    <!-- 楼梯（直梯，西侧中段偏南） -->
     <rect x="40" y="420" width="80" height="240" class="solid"/>
     <text x="40" y="415">楼梯（直梯 1.0m×3.0m）</text>
 
-    <!-- 茶水/餐区（西南，独立小间） -->
+    <!-- 茶水/餐区（西南独立小间） -->
     <rect x="140" y="520" width="220" height="180" class="zone"/>
-    <text x="150" y="515">茶水/餐区（独立门）</text>
+    <text x="150" y="515">茶水/餐区（独立门，避味扩散）</text>
 
-    <!-- 厕所（东北角，板间 2m×2m） -->
+    <!-- 厕所：东北角 板间 2m×2m -->
     <rect x="660" y="20" width="160" height="160" class="zone"/>
-    <text x="665" y="15">厕所（板间 2m×2m）</text>
+    <text x="665" y="15">厕所（板间 2m×2m，机械排风）</text>
 
-    <!-- 主要动线与气流 -->
-    <line x1="0" y1="70" x2="820" y2="330" class="arrow"/>
-    <text x="240" y="150" fill="#d33">建议：门→展示墙→东侧工作区（气缓则聚）</text>
-  </g>
-
-  <!-- 二层（放在右侧） -->
-  <g transform="translate(1000,120)">
-    <text x="260" y="-40" class="label">二层 · 实用布局（到中柱范围）</text>
-    <!-- 二层外框：取与一层右半相同比例 420 × 760 -->
-    <rect x="0" y="0" width="420" height="760" class="outline"/>
-    <text x="10" y="780" class="dim">范围：约 5.0m × 9.5m（至中柱）</text>
-
-    <!-- 楼梯上口（西侧中段偏南） -->
-    <rect x="10" y="420" width="80" height="120" class="solid"/>
-    <text x="10" y="415">楼梯上口</text>
-
-    <!-- 主管室（西北） -->
-    <rect x="20" y="20" width="160" height="140" class="zone"/>
-    <text x="25" y="15">主管室（你 · 武曲天梁）</text>
-    <text x="25" y="45">背北墙为靠山，桌朝东南</text>
-
-    <!-- 设计师室（东南） -->
-    <rect x="240" y="520" width="160" height="180" class="zone"/>
-    <text x="245" y="515">设计师室（紫微太阴）</text>
-    <text x="245" y="545">靠东窗柔光，宜绿植/画作</text>
-
-    <!-- 灵感/会议区（中部靠东） -->
-    <rect x="200" y="280" width="200" height="120" class="zone"/>
-    <text x="205" y="275">灵感/会议区</text>
-    <text x="205" y="305">公共桌 + Moodboard</text>
-
-    <!-- 提示 -->
-    <text x="20" y="740" fill="#666">提示：房门避正冲楼梯；北墙可设高柜稳气；</text>
-    <text x="20" y="760" fill="#666">设计师室属文昌位，宜柔色/植物；主管室适合浅金米色稳财。</text>
+    <!-- 风水提示 -->
+    <text x="20" y="760" class="note">
+      靠山：北墙高柜稳气；财位：西北角/北中；文昌：东南角；忌：厕门直冲工位，建议屏风。
+    </text>
   </g>
 </svg>
